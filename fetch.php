@@ -21,7 +21,8 @@ $ans = mysqli_query($con, $query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="assign.css" rel="stylesheet">
+    
+    <?php include("fetch_css.php");?>
 </head>
 
 <body>
@@ -41,7 +42,7 @@ $ans = mysqli_query($con, $query);
             <tr>
                 <?php
                 while ($tr = mysqli_fetch_assoc($ans)) {
-                    $key = $tr['CRN'];
+                  
                 ?>
                     <td><?php echo $tr['CRN'] ?></td>
                     <td><i class="material-icons">motorcycle</i></td>
@@ -49,9 +50,10 @@ $ans = mysqli_query($con, $query);
                     <td><?php echo $tr['Time'] ?></td>
                     <td>UserName</td>
                     <td>User Contact</td>
-                    <td><button id="myBtn"><i class="material-icons">visibility</i></button></td>
+                    <td><button id="myBtn<?php echo $tr['CRN']?>" style="border:none;background-color: Transparent;"><i class="material-icons">visibility</i></button></td>
             </tr>
         <?php
+        include("assign.php");
                 }
         ?>
 
@@ -136,7 +138,25 @@ $ans = mysqli_query($con, $query);
     </div>
 </div>
 </div>
-    <script src="assign.js"></script>
+<script>
+  // Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  document.getElementById("modal").style.filter = "blur(0px)";
+  document.getElementById("myModal").style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == document.getElementById("myModal")) {
+    document.getElementById("modal").style.filter = "blur(0px)";
+    document.getElementById("myModal").style.display = "none";
+  }
+}
+  </script>
+
 </body>
 
 </html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill Ride End Data</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            width: 100vw;
+        }
+
+        .main {
+            max-width: 45vw;
+            max-height: 50vh;
+            border: 1px solid black
+        }
+
+        .modal {
+            padding: 1rem;
+        }
+
+        label {
+            font-size: large;
+            color: rgb(88, 88, 198);
+        }
+
+        .time {
+            display: flex;
+            flex-direction: row;
+        }
+        .km{
+            display: flex;
+            
+        }
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h2>Fill Ride End Data</h2>
+        <hr>
+        <div class="modal">
+            <div class="time">
+                <div class="flex-column">
+                    <label>From Time</label>
+                    <input type="time">
+                </div>
+                <div class="flex-column">
+                    <label>To Time</label>
+                    <input type="time">
+                </div>
+                <div class="flex-column">
+                    <label>Total Time</label>
+                    <input type="time">
+                </div>
+            </div>
+            <div class="km">
+                <div class="flex-column">
+                    <label>From KM</label>
+                    <input type="text" style="width: 100%">
+                </div>
+                <div class="flex-column">
+                    <label>To KM</label>
+                    <input type="text" style="width: 100%;">
+                </div>
+                <div class="flex-column">
+                    <label>Total KM</label>
+                    <input type="text" style="width: 100%;">
+                </div>
+            </div>
+            <div class="photo">
+                <label>Upload Photo</label>
+                <div class="file">
+                    <input type="file" placeholder="Choose File">
+                </div>
+            </div>
+            <div class="remark">
+                <label>Remark</label>
+                <input type="text" placeholder="Message">
+            </div>
+            <div id="myBtn">
+                <button>Submit</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
